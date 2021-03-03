@@ -1,0 +1,28 @@
+.avatar-detail{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    color : rgb(179, 177, 177);
+    /* font-weight: 500; */
+}
+
+.avatar-pic{
+    flex: 10%;
+}
+
+.avatar-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.avatar-name{
+    flex: 80%;
+    padding-left: 15px;
+}
+
+.avatar-detail svg{
+    flex: 10%;
+    cursor: pointer;
+    fill : white
+}

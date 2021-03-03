@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import MiddleBar from './Components/MiddleBar/MiddleBar';
+import RightBar from './Components/RightBar/RightBar';
+import SideBar from './Components/SideBar/SideBar';
+import { tagList, noteList } from './Database';
 
 function App() {
+
+  const [tags, setTags] = useState(tagList);
+  const [tagSelected, setTagSelected] = useState("All Notes");
+  const [notes, setNotes] = useState(noteList);
+  const [noteSelected, setNoteSelected] = useState(notes[0]);
+
+  // console.log(notes)
+  // console.log(noteSelected.text)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SideBar
+        notes={notes}
+        setNotes = {setNotes}
+        tagSelected={tagSelected}
+        setTagSelected = {setTagSelected}
+        tags={tags}
+        setTags={setTags} />
+      
+      <main>
+        <MiddleBar
+          noteSelected={noteSelected}
+          setNoteSelected = {setNoteSelected}
+          notes = {notes}
+          tagSelected = {tagSelected}
+        />
+        <RightBar
+          setNoteSelected={setNoteSelected}
+          noteSelected={noteSelected}
+          notes={notes}
+          setNotes ={setNotes}
+        />
+      </main>
     </div>
   );
 }
