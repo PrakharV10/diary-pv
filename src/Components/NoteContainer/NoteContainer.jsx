@@ -5,7 +5,7 @@ function NoteContainer({noteSelected,note}) {
     return (
         <div className={noteSelected === note ? "one-note active-note" : "one-note"}>
             <div className="note-header">
-                {note.title}
+                {note.title === "" ? "Untitled" : `${note.title}`}
             </div>
             <p className="note-text">
                 {note.text}

@@ -9,14 +9,16 @@ function NewNote({ notes, setNotes }) {
         let today = new Date();
         let  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         let time = today.getHours() + ':' + today.getMinutes();
+        let edit = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
         setNotes([...notes, {
             id : uuid(),
-            title: "Untitled",
-            text: "Your Paragraph goes here",
+            title: "",
+            text: "",
             tag: "All Notes",
             time: time.toLocaleString(),
-            date : date.toLocaleString()
+            date: date.toLocaleString(),
+            edited : edit.toLocaleString()
         }])
     }
 

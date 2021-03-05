@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import EditModal from './Components/EditModal/EditModal.jsx';
 import MiddleBar from './Components/MiddleBar/MiddleBar';
 import RightBar from './Components/RightBar/RightBar';
 import SideBar from './Components/SideBar/SideBar';
@@ -12,6 +13,7 @@ function App() {
   const [tagSelected, setTagSelected] = useState("All Notes");
   const [notes, setNotes] = useState(noteList);
   const [noteSelected, setNoteSelected] = useState(notes[0]);
+  const [editModal, setEditModal] = useState(false);
 
   // console.log(notes)
   // console.log(noteSelected.text)
@@ -19,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <SideBar
+        setEditModal = {setEditModal}
         notes={notes}
         setNotes = {setNotes}
         tagSelected={tagSelected}
@@ -37,9 +40,14 @@ function App() {
           setNoteSelected={setNoteSelected}
           noteSelected={noteSelected}
           notes={notes}
-          setNotes ={setNotes}
+          setNotes={setNotes}
+          tags={tags}
         />
       </main>
+      {editModal && <EditModal
+        setEditModal={setEditModal}
+        setTags = {setTags}
+        tags={tags} />}
     </div>
   );
 }

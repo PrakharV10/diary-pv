@@ -18,7 +18,7 @@ function MiddleBar({noteSelected, setNoteSelected, notes, tagSelected}) {
             <div className="notes-container">
                 {
                     notes.map((note, index) => {
-                        if (note.tag === tagSelected) {
+                        if (note.tag === tagSelected || tagSelected === "All Notes") {
                             return (
                                 <div
                                     onClick = {() => setNoteSelected(note)}

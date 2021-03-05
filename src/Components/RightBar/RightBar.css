@@ -1,16 +1,50 @@
 .right-bar{
+    
     flex: 75%;
     height: 100%;
     background-color: #262626;
 }
 
 .right-bar-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: 117px;
-    /* border-bottom: 1px solid white; */
+    height: 117.5px;
+    padding: 1.5rem 2rem .8rem ;
+    color: white;
+    font-size: .8rem;
+    font-weight: 300;
+    border-bottom: .5px ridge rgb(73, 72, 72);
+}
+
+.header-upper{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    opacity: .7;
+}
+
+.header-upper svg{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.header-lower{
+    /* opacity: .7; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-lower > div{
+    color: red;
+    opacity: 1;
+    font-style: italic;
 }
 
 .right-bar-content{
+    padding-top: 2rem;
     height: calc(100vh - 180px);
     border-bottom: .5px ridge rgb(73, 72, 72);
 
@@ -33,8 +67,8 @@
     line-height: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    height: 550px;
-    width: 76%;
+    height: 500px;
+    width: 100%;
     background-color: transparent;
     border: none;
     padding: 2rem;
@@ -43,7 +77,7 @@
 
 .right-bar-footer{
     align-items: center;
-    width: 75%;
+    width: 100%;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -54,4 +88,14 @@
     width: 20px;
     height: 20px;
     color : white;
+}
+
+.right-bar-footer button{
+    background-color: #00A82D;
+    outline:none;
+    border: none;
+    padding: .5rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
 }

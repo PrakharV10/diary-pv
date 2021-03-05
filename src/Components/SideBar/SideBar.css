@@ -19,6 +19,7 @@
     color : rgb(179, 177, 177);
     cursor: pointer;
     transition: all .2s ease;
+    font-size: .8rem;
 }
 
 .n-active{
@@ -41,6 +42,14 @@
     /* padding-top: 4px; */
     padding-left: 10px;
     font-size: .8rem;
+}
+
+.tag-add{
+    color: #00A82D;
+}
+
+.tag-add svg{
+    fill : #00A82D;
 }
 
 footer{
