@@ -1,7 +1,5 @@
 export const tagList = [
-    "Work",
-    "Movies",
-    "Poems"
+    "Work"
 ]
 
 export const noteList = [
