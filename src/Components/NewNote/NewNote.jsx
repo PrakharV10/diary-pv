@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './NewNote.css'
 import uuid from 'react-uuid'
 
 
-function NewNote({ notes, setNotes }) {
+function NewNote({ setNoteSelected, notes, setNotes }) {
     
     function addNewNote() {
         let today = new Date();
@@ -11,7 +11,7 @@ function NewNote({ notes, setNotes }) {
         let time = today.getHours() + ':' + today.getMinutes();
         let edit = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
-        setNotes([...notes, {
+        setNotes([{
             id : uuid(),
             title: "",
             text: "",
@@ -19,8 +19,12 @@ function NewNote({ notes, setNotes }) {
             time: time.toLocaleString(),
             date: date.toLocaleString(),
             edited : edit.toLocaleString()
-        }])
+        }, ...notes])
     }
+
+    useEffect(() => {
+        setNoteSelected(notes[0])
+    },[notes])
 
     return (
         <div className="new-note" onClick={addNewNote}>

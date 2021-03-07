@@ -3,12 +3,13 @@ import Avatar from '../Avatar/Avatar'
 import NewNote from '../NewNote/NewNote'
 import './SideBar.css'
 
-function SideBar({setEditModal, notes, setNotes, setTagSelected, tagSelected, tags }) {
+function SideBar({setNoteSelected,setEditModal, notes, setNotes, setTagSelected, tagSelected, tags }) {
 
     return (
         <div className="side-bar">
             <Avatar name="Clark Kent" />
             <NewNote
+                setNoteSelected ={setNoteSelected}
                 setNotes = {setNotes}
                 notes={notes} />
             <div className="side-bar-list">

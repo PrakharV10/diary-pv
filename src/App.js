@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <SideBar
+        setNoteSelected ={setNoteSelected}
         setEditModal = {setEditModal}
         notes={notes}
         setNotes = {setNotes}
